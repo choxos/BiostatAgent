@@ -62,9 +62,9 @@
       ]
     },
     {
-      "name": "itc-modelling",
-      "source": "./plugins/itc-modelling",
-      "description": "Expert agents for indirect treatment comparison modelling in R, covering pairwise MA, NMA, MAIC, STC, and ML-NMR with tidy modelling practices",
+      "name": "itc-modeling",
+      "source": "./plugins/itc-modeling",
+      "description": "Expert agents for indirect treatment comparison modeling in R, covering pairwise MA, NMA, MAIC, STC, and ML-NMR with tidy modeling practices",
       "version": "1.0.0",
       "category": "biostatistics",
       "strict": false,
@@ -101,12 +101,12 @@
         "R",
         "biostatistics",
         "NICE-DSU",
-        "tidy-modelling"
+        "tidy-modeling"
       ]
     },
     {
-      "name": "r-tidy-modelling",
-      "source": "./plugins/r-tidy-modelling",
+      "name": "r-tidy-modeling",
+      "source": "./plugins/r-tidy-modeling",
       "description": "Expert agents for R data science and biostatistics covering data wrangling, feature engineering, model building, statistical evaluation, clinical trials, genomics, documentation generation, and reproducible reporting using tidyverse and tidymodels",
       "version": "1.0.0",
       "category": "data-science",

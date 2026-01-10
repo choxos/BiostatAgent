@@ -1,4 +1,4 @@
-# R Tidy Modelling Plugin
+# R Tidy Modeling Plugin
 
 > **Comprehensive R Data Science & Biostatistics** — tidyverse, tidymodels, clinical trials, epidemiology, and reproducible research
 
@@ -22,7 +22,7 @@ This plugin provides expert agents for R-based data science and biostatistics fo
 
 ```bash
 # Install plugin
-/plugin install r-tidy-modelling
+/plugin install r-tidy-modeling
 
 # Start analysis
 /r-analysis

@@ -1,4 +1,4 @@
-# ITC Modelling Plugin
+# ITC Modeling Plugin
 
 > **Indirect Treatment Comparison Experts** — Pairwise MA, NMA, MAIC, STC, and ML-NMR following NICE DSU guidance
 
@@ -20,7 +20,7 @@ This plugin provides expert agents for indirect treatment comparison (ITC) metho
 
 ```bash
 # Install plugin
-/plugin install itc-modelling
+/plugin install itc-modeling
 
 # Start ITC analysis
 /itc-analysis

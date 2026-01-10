@@ -9,8 +9,8 @@ A unified [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) pl
 | Plugin | Focus | Agents | Commands | Skills |
 |--------|-------|--------|----------|--------|
 | **bayesian-modeling** | Bayesian inference (Stan, PyMC, JAGS) | 6 | 3 | 9 |
-| **itc-modelling** | Indirect treatment comparisons | 7 | 2 | 6 |
-| **r-tidy-modelling** | Tidy R workflows & biostatistics | 10 | 7 | 12 |
+| **itc-modeling** | Indirect treatment comparisons | 7 | 2 | 6 |
+| **r-tidy-modeling** | Tidy R workflows & biostatistics | 10 | 7 | 12 |
 | **clinical-trial-simulation** | Clinical trial simulation | 7 | 5 | 7 |
 | **Total** | | **30** | **17** | **34** |
 
@@ -28,12 +28,12 @@ Install all plugins or select specific ones:
 
 ```bash
 # Install all
-/plugin install bayesian-modeling itc-modelling r-tidy-modelling clinical-trial-simulation
+/plugin install bayesian-modeling itc-modeling r-tidy-modeling clinical-trial-simulation
 
 # Or install individually
 /plugin install bayesian-modeling
-/plugin install itc-modelling
-/plugin install r-tidy-modelling
+/plugin install itc-modeling
+/plugin install r-tidy-modeling
 /plugin install clinical-trial-simulation
 ```
 
@@ -77,7 +77,7 @@ Create, review, and validate Bayesian models across four languages:
 
 ---
 
-### 2. ITC Modelling (`itc-modelling`)
+### 2. ITC Modeling (`itc-modeling`)
 
 Expert agents for indirect treatment comparison following NICE DSU guidance:
 
@@ -97,7 +97,7 @@ Expert agents for indirect treatment comparison following NICE DSU guidance:
 
 ---
 
-### 3. R Tidy Modelling (`r-tidy-modelling`)
+### 3. R Tidy Modeling (`r-tidy-modeling`)
 
 Comprehensive R data science following tidyverse and tidymodels best practices:
 
@@ -155,11 +155,11 @@ BiostatAgent/
 │   │   ├── agents/                   # 6 agents
 │   │   ├── commands/                 # 3 commands
 │   │   └── skills/                   # 9 skills
-│   ├── itc-modelling/
+│   ├── itc-modeling/
 │   │   ├── agents/                   # 7 agents
 │   │   ├── commands/                 # 2 commands
 │   │   └── skills/                   # 6 skills
-│   ├── r-tidy-modelling/
+│   ├── r-tidy-modeling/
 │   │   ├── agents/                   # 10 agents
 │   │   ├── commands/                 # 7 commands
 │   │   └── skills/                   # 12 skills
@@ -212,8 +212,8 @@ Use weighted logrank for non-proportional hazards.
 | Plugin | Agents |
 |--------|--------|
 | bayesian-modeling | model-architect, stan-specialist, pymc-specialist, bugs-specialist, model-reviewer, test-runner |
-| itc-modelling | itc-architect, pairwise-meta-analyst, nma-specialist, maic-specialist, stc-specialist, ml-nmr-specialist, itc-code-reviewer |
-| r-tidy-modelling | r-data-architect, tidymodels-engineer, feature-engineer, biostatistician, data-wrangler, viz-specialist, reporting-engineer, r-code-reviewer, r-docs-architect, r-tutorial-engineer |
+| itc-modeling | itc-architect, pairwise-meta-analyst, nma-specialist, maic-specialist, stc-specialist, ml-nmr-specialist, itc-code-reviewer |
+| r-tidy-modeling | r-data-architect, tidymodels-engineer, feature-engineer, biostatistician, data-wrangler, viz-specialist, reporting-engineer, r-code-reviewer, r-docs-architect, r-tutorial-engineer |
 | clinical-trial-simulation | simulation-architect, tte-specialist, cse-specialist, multiplicity-expert, gs-design-specialist, power-optimizer, code-reviewer |
 
 ### Commands (17 total)
@@ -221,8 +221,8 @@ Use weighted logrank for non-proportional hazards.
 | Plugin | Commands |
 |--------|----------|
 | bayesian-modeling | `/create-model`, `/review-model`, `/run-diagnostics` |
-| itc-modelling | `/itc-analysis`, `/itc-review` |
-| r-tidy-modelling | `/r-analysis`, `/r-code-review`, `/r-model-comparison`, `/r-clinical-analysis`, `/r-project-setup`, `/r-doc-generate`, `/r-tutorial-create` |
+| itc-modeling | `/itc-analysis`, `/itc-review` |
+| r-tidy-modeling | `/r-analysis`, `/r-code-review`, `/r-model-comparison`, `/r-clinical-analysis`, `/r-project-setup`, `/r-doc-generate`, `/r-tutorial-create` |
 | clinical-trial-simulation | `/power-analysis`, `/sample-size`, `/gs-design`, `/multiplicity-optimization`, `/cse-analysis` |
 
 ### Skills (34 total)
@@ -230,8 +230,8 @@ Use weighted logrank for non-proportional hazards.
 | Plugin | Skills |
 |--------|--------|
 | bayesian-modeling | stan-fundamentals, pymc-fundamentals, bugs-fundamentals, hierarchical-models, regression-models, time-series-models, survival-models, meta-analysis, model-diagnostics |
-| itc-modelling | tidy-itc-workflow, pairwise-ma-methodology, nma-methodology, maic-methodology, stc-methodology, ml-nmr-methodology |
-| r-tidy-modelling | tidymodels-workflow, recipes-patterns, resampling-strategies, model-tuning, model-evaluation, survival-analysis, clinical-trials, bayesian-modeling, epidemiology-methods, genomics-analysis, r-documentation-patterns, roxygen2-pkgdown |
+| itc-modeling | tidy-itc-workflow, pairwise-ma-methodology, nma-methodology, maic-methodology, stc-methodology, ml-nmr-methodology |
+| r-tidy-modeling | tidymodels-workflow, recipes-patterns, resampling-strategies, model-tuning, model-evaluation, survival-analysis, clinical-trials, bayesian-modeling, epidemiology-methods, genomics-analysis, r-documentation-patterns, roxygen2-pkgdown |
 | clinical-trial-simulation | simtrial-fundamentals, mediana-fundamentals, multiplicity-methods, time-to-event-methods, group-sequential-methods, power-optimization-patterns, clinical-trial-design-patterns |
 
 ---
