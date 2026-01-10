@@ -1,0 +1,214 @@
+{
+  "name": "biostat-agent",
+  "owner": {
+    "name": "Ahmad Sofi-Mahmudi",
+    "email": "choxos@users.noreply.github.com",
+    "url": "https://github.com/choxos"
+  },
+  "metadata": {
+    "description": "Comprehensive biostatistics agent ecosystem for R with 30 specialized agents, 17 workflow commands, and 34 methodology skills covering Bayesian modeling, indirect treatment comparisons, tidy R workflows, and clinical trial simulations",
+    "version": "1.0.0",
+    "license": "MIT"
+  },
+  "plugins": [
+    {
+      "name": "bayesian-modeling",
+      "source": "./plugins/bayesian-modeling",
+      "description": "Create, review, and validate Bayesian models in Stan, PyMC, JAGS, and WinBUGS",
+      "version": "1.1.0",
+      "category": "statistics",
+      "strict": false,
+      "agents": [
+        "./agents/model-architect.md",
+        "./agents/stan-specialist.md",
+        "./agents/pymc-specialist.md",
+        "./agents/bugs-specialist.md",
+        "./agents/model-reviewer.md",
+        "./agents/test-runner.md"
+      ],
+      "commands": [
+        "./commands/create-model.md",
+        "./commands/review-model.md",
+        "./commands/run-diagnostics.md"
+      ],
+      "skills": [
+        "./skills/stan-fundamentals",
+        "./skills/pymc-fundamentals",
+        "./skills/bugs-fundamentals",
+        "./skills/hierarchical-models",
+        "./skills/regression-models",
+        "./skills/time-series-models",
+        "./skills/survival-models",
+        "./skills/meta-analysis",
+        "./skills/model-diagnostics"
+      ],
+      "keywords": [
+        "bayesian",
+        "stan",
+        "pymc",
+        "jags",
+        "winbugs",
+        "mcmc",
+        "hierarchical",
+        "regression",
+        "time-series",
+        "survival",
+        "meta-analysis",
+        "cmdstanr",
+        "r2jags",
+        "arviz",
+        "python",
+        "probabilistic-programming"
+      ]
+    },
+    {
+      "name": "itc-modelling",
+      "source": "./plugins/itc-modelling",
+      "description": "Expert agents for indirect treatment comparison modelling in R, covering pairwise MA, NMA, MAIC, STC, and ML-NMR with tidy modelling practices",
+      "version": "1.0.0",
+      "category": "biostatistics",
+      "strict": false,
+      "agents": [
+        "./agents/itc-architect.md",
+        "./agents/pairwise-meta-analyst.md",
+        "./agents/nma-specialist.md",
+        "./agents/maic-specialist.md",
+        "./agents/stc-specialist.md",
+        "./agents/ml-nmr-specialist.md",
+        "./agents/itc-code-reviewer.md"
+      ],
+      "commands": [
+        "./commands/itc-analysis.md",
+        "./commands/itc-review.md"
+      ],
+      "skills": [
+        "./skills/tidy-itc-workflow",
+        "./skills/pairwise-ma-methodology",
+        "./skills/nma-methodology",
+        "./skills/maic-methodology",
+        "./skills/stc-methodology",
+        "./skills/ml-nmr-methodology"
+      ],
+      "keywords": [
+        "indirect-treatment-comparison",
+        "meta-analysis",
+        "network-meta-analysis",
+        "MAIC",
+        "STC",
+        "ML-NMR",
+        "health-technology-assessment",
+        "evidence-synthesis",
+        "R",
+        "biostatistics",
+        "NICE-DSU",
+        "tidy-modelling"
+      ]
+    },
+    {
+      "name": "r-tidy-modelling",
+      "source": "./plugins/r-tidy-modelling",
+      "description": "Expert agents for R data science and biostatistics covering data wrangling, feature engineering, model building, statistical evaluation, clinical trials, genomics, documentation generation, and reproducible reporting using tidyverse and tidymodels",
+      "version": "1.0.0",
+      "category": "data-science",
+      "strict": false,
+      "agents": [
+        "./agents/r-data-architect.md",
+        "./agents/tidymodels-engineer.md",
+        "./agents/feature-engineer.md",
+        "./agents/biostatistician.md",
+        "./agents/data-wrangler.md",
+        "./agents/viz-specialist.md",
+        "./agents/reporting-engineer.md",
+        "./agents/r-code-reviewer.md",
+        "./agents/r-docs-architect.md",
+        "./agents/r-tutorial-engineer.md"
+      ],
+      "commands": [
+        "./commands/r-analysis.md",
+        "./commands/r-code-review.md",
+        "./commands/r-model-comparison.md",
+        "./commands/r-clinical-analysis.md",
+        "./commands/r-project-setup.md",
+        "./commands/r-doc-generate.md",
+        "./commands/r-tutorial-create.md"
+      ],
+      "skills": [
+        "./skills/tidymodels-workflow",
+        "./skills/recipes-patterns",
+        "./skills/resampling-strategies",
+        "./skills/model-tuning",
+        "./skills/model-evaluation",
+        "./skills/survival-analysis",
+        "./skills/clinical-trials",
+        "./skills/bayesian-modeling",
+        "./skills/epidemiology-methods",
+        "./skills/genomics-analysis",
+        "./skills/r-documentation-patterns",
+        "./skills/roxygen2-pkgdown"
+      ],
+      "keywords": [
+        "R",
+        "tidyverse",
+        "tidymodels",
+        "data-science",
+        "biostatistics",
+        "clinical-trials",
+        "machine-learning",
+        "statistical-modeling",
+        "feature-engineering",
+        "reproducible-research",
+        "ggplot2",
+        "dplyr",
+        "renv",
+        "targets",
+        "quarto"
+      ]
+    },
+    {
+      "name": "clinical-trial-simulation",
+      "source": "./plugins/clinical-trial-simulation",
+      "description": "Clinical trial simulation plugin supporting simtrial (time-to-event) and Mediana (CSE) frameworks for power analysis, sample size determination, group sequential designs, and multiplicity optimization",
+      "version": "1.0.0",
+      "category": "clinical-trials",
+      "strict": false,
+      "agents": [
+        "./agents/simulation-architect.md",
+        "./agents/tte-specialist.md",
+        "./agents/cse-specialist.md",
+        "./agents/multiplicity-expert.md",
+        "./agents/gs-design-specialist.md",
+        "./agents/power-optimizer.md",
+        "./agents/code-reviewer.md"
+      ],
+      "commands": [
+        "./commands/power-analysis.md",
+        "./commands/sample-size.md",
+        "./commands/gs-design.md",
+        "./commands/multiplicity-optimization.md",
+        "./commands/cse-analysis.md"
+      ],
+      "skills": [
+        "./skills/simtrial-fundamentals",
+        "./skills/mediana-fundamentals",
+        "./skills/multiplicity-methods",
+        "./skills/time-to-event-methods",
+        "./skills/group-sequential-methods",
+        "./skills/power-optimization-patterns",
+        "./skills/clinical-trial-design-patterns"
+      ],
+      "keywords": [
+        "clinical-trials",
+        "simulation",
+        "power-analysis",
+        "sample-size",
+        "survival-analysis",
+        "time-to-event",
+        "multiplicity",
+        "group-sequential",
+        "CSE",
+        "simtrial",
+        "Mediana"
+      ]
+    }
+  ]
+}
