@@ -6,7 +6,7 @@
     "url": "https://github.com/choxos"
   },
   "metadata": {
-    "description": "Comprehensive biostatistics agent ecosystem for R with 30 specialized agents, 17 workflow commands, and 34 methodology skills covering Bayesian modeling, indirect treatment comparisons, tidy R workflows, and clinical trial simulations",
+    "description": "Comprehensive biostatistics agent ecosystem for R with 30 specialized agents, 17 workflow commands, and 45 methodology skills covering Bayesian modeling, indirect treatment comparisons, tidy R workflows, and clinical trial simulations",
     "version": "1.0.0",
     "license": "MIT"
   },
@@ -134,6 +134,7 @@
       ],
       "skills": [
         "./skills/tidymodels-workflow",
+        "./skills/tidymodels-review-patterns",
         "./skills/recipes-patterns",
         "./skills/resampling-strategies",
         "./skills/model-tuning",
@@ -144,7 +145,17 @@
         "./skills/epidemiology-methods",
         "./skills/genomics-analysis",
         "./skills/r-documentation-patterns",
-        "./skills/roxygen2-pkgdown"
+        "./skills/roxygen2-pkgdown",
+        "./skills/meta-analysis",
+        "./skills/network-meta-analysis",
+        "./skills/ipd-meta-analysis",
+        "./skills/diagnostic-accuracy",
+        "./skills/causal-mediation",
+        "./skills/mendelian-randomization",
+        "./skills/pharmacokinetics",
+        "./skills/health-economics",
+        "./skills/real-world-evidence",
+        "./skills/advanced-adaptive-trials"
       ],
       "keywords": [
         "R",

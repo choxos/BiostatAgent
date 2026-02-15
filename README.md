@@ -1,6 +1,6 @@
 # BiostatAgent
 
-> **Comprehensive Biostatistics Agent Ecosystem** — 30 specialized agents, 17 workflow commands, and 34 methodology skills for R-based statistical analysis
+> **Comprehensive Biostatistics Agent Ecosystem** -- 30 specialized agents, 17 workflow commands, and 45 methodology skills for R-based statistical analysis
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -10,9 +10,9 @@ A unified [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) pl
 |--------|-------|--------|----------|--------|
 | **bayesian-modeling** | Bayesian inference (Stan, PyMC, JAGS) | 6 | 3 | 9 |
 | **itc-modeling** | Indirect treatment comparisons | 7 | 2 | 6 |
-| **r-tidy-modeling** | Tidy R workflows & biostatistics | 10 | 7 | 12 |
+| **r-tidy-modeling** | Tidy R workflows & biostatistics | 10 | 7 | 23 |
 | **clinical-trial-simulation** | Clinical trial simulation | 7 | 5 | 7 |
-| **Total** | | **30** | **17** | **34** |
+| **Total** | | **30** | **17** | **45** |
 
 ## Quick Start
 
@@ -61,10 +61,10 @@ install.packages(c(
 
 Create, review, and validate Bayesian models across four languages:
 
-- **Stan 2.37** — Modern HMC/NUTS sampling with cmdstanr
-- **PyMC 5** — Python-native Bayesian modeling with ArviZ
-- **JAGS** — Cross-platform Gibbs sampling with R2jags
-- **WinBUGS** — Classic BUGS implementation with R2WinBUGS
+- **Stan 2.37** -- Modern HMC/NUTS sampling with cmdstanr
+- **PyMC 5** -- Python-native Bayesian modeling with ArviZ
+- **JAGS** -- Cross-platform Gibbs sampling with R2jags
+- **WinBUGS** -- Classic BUGS implementation with R2WinBUGS
 
 **Commands:**
 | Command | Description |
@@ -75,17 +75,19 @@ Create, review, and validate Bayesian models across four languages:
 
 **Agents:** model-architect, stan-specialist, pymc-specialist, bugs-specialist, model-reviewer, test-runner
 
+**Skills:** stan-fundamentals, pymc-fundamentals, bugs-fundamentals, hierarchical-models, regression-models, time-series-models, survival-models, meta-analysis, model-diagnostics
+
 ---
 
 ### 2. ITC Modeling (`itc-modeling`)
 
 Expert agents for indirect treatment comparison following NICE DSU guidance:
 
-- **Pairwise Meta-Analysis** — Fixed/random effects with meta, metafor, bayesmeta
-- **Network Meta-Analysis** — Frequentist (netmeta) and Bayesian (gemtc)
-- **MAIC** — Matching-adjusted indirect comparison with maicplus
-- **STC** — Simulated treatment comparison
-- **ML-NMR** — Multilevel network meta-regression with multinma
+- **Pairwise Meta-Analysis** -- Fixed/random effects with meta, metafor, bayesmeta
+- **Network Meta-Analysis** -- Frequentist (netmeta) and Bayesian (gemtc)
+- **MAIC** -- Matching-adjusted indirect comparison with maicplus
+- **STC** -- Simulated treatment comparison
+- **ML-NMR** -- Multilevel network meta-regression with multinma
 
 **Commands:**
 | Command | Description |
@@ -95,18 +97,20 @@ Expert agents for indirect treatment comparison following NICE DSU guidance:
 
 **Agents:** itc-architect, pairwise-meta-analyst, nma-specialist, maic-specialist, stc-specialist, ml-nmr-specialist, itc-code-reviewer
 
+**Skills:** tidy-itc-workflow, pairwise-ma-methodology, nma-methodology, maic-methodology, stc-methodology, ml-nmr-methodology
+
 ---
 
 ### 3. R Tidy Modeling (`r-tidy-modeling`)
 
-Comprehensive R data science following tidyverse and tidymodels best practices:
+Comprehensive R data science and biostatistics following tidyverse and tidymodels best practices:
 
-- **Data Wrangling** — dplyr, tidyr, data transformation
-- **Feature Engineering** — recipes, preprocessing, transformations
-- **Model Building** — parsnip, workflows, tidymodels
-- **Visualization** — ggplot2, publication-ready figures
-- **Reporting** — Quarto, R Markdown, reproducible reports
-- **Biostatistics** — Clinical trials, survival analysis, epidemiology
+- **Data Wrangling** -- dplyr, tidyr, data transformation
+- **Feature Engineering** -- recipes, preprocessing, transformations
+- **Model Building** -- parsnip, workflows, tidymodels
+- **Visualization** -- ggplot2, publication-ready figures
+- **Reporting** -- Quarto, R Markdown, reproducible reports
+- **Biostatistics** -- Clinical trials, survival analysis, epidemiology, meta-analysis, genomics, pharmacokinetics, health economics, and more
 
 **Commands:**
 | Command | Description |
@@ -121,15 +125,25 @@ Comprehensive R data science following tidyverse and tidymodels best practices:
 
 **Agents:** r-data-architect, tidymodels-engineer, feature-engineer, biostatistician, data-wrangler, viz-specialist, reporting-engineer, r-code-reviewer, r-docs-architect, r-tutorial-engineer
 
+**Skills (23):**
+
+| Category | Skills |
+|----------|--------|
+| Tidymodels | tidymodels-workflow, tidymodels-review-patterns, recipes-patterns, resampling-strategies, model-tuning, model-evaluation |
+| Clinical & Epidemiology | clinical-trials, epidemiology-methods, advanced-adaptive-trials, real-world-evidence |
+| Evidence Synthesis | meta-analysis, network-meta-analysis, ipd-meta-analysis |
+| Specialized Methods | survival-analysis, bayesian-modeling, diagnostic-accuracy, causal-mediation, mendelian-randomization, pharmacokinetics, health-economics, genomics-analysis |
+| Documentation | r-documentation-patterns, roxygen2-pkgdown |
+
 ---
 
 ### 4. Clinical Trial Simulation (`clinical-trial-simulation`)
 
 Design and simulate clinical trials using simtrial and Mediana:
 
-- **simtrial** — Time-to-event simulations, weighted logrank, MaxCombo
-- **Mediana** — Clinical Scenario Evaluation, multiplicity, Word reports
-- **gsDesign2** — Group sequential designs, alpha spending
+- **simtrial** -- Time-to-event simulations, weighted logrank, MaxCombo
+- **Mediana** -- Clinical Scenario Evaluation, multiplicity, Word reports
+- **gsDesign2** -- Group sequential designs, alpha spending
 
 **Commands:**
 | Command | Description |
@@ -141,6 +155,8 @@ Design and simulate clinical trials using simtrial and Mediana:
 | `/cse-analysis` | Full Clinical Scenario Evaluation |
 
 **Agents:** simulation-architect, tte-specialist, cse-specialist, multiplicity-expert, gs-design-specialist, power-optimizer, code-reviewer
+
+**Skills:** simtrial-fundamentals, mediana-fundamentals, multiplicity-methods, time-to-event-methods, group-sequential-methods, power-optimization-patterns, clinical-trial-design-patterns
 
 ---
 
@@ -162,7 +178,7 @@ BiostatAgent/
 │   ├── r-tidy-modeling/
 │   │   ├── agents/                   # 10 agents
 │   │   ├── commands/                 # 7 commands
-│   │   └── skills/                   # 12 skills
+│   │   └── skills/                   # 23 skills
 │   └── clinical-trial-simulation/
 │       ├── agents/                   # 7 agents
 │       ├── commands/                 # 5 commands
@@ -225,20 +241,20 @@ Use weighted logrank for non-proportional hazards.
 | r-tidy-modeling | `/r-analysis`, `/r-code-review`, `/r-model-comparison`, `/r-clinical-analysis`, `/r-project-setup`, `/r-doc-generate`, `/r-tutorial-create` |
 | clinical-trial-simulation | `/power-analysis`, `/sample-size`, `/gs-design`, `/multiplicity-optimization`, `/cse-analysis` |
 
-### Skills (34 total)
+### Skills (45 total)
 
 | Plugin | Skills |
 |--------|--------|
 | bayesian-modeling | stan-fundamentals, pymc-fundamentals, bugs-fundamentals, hierarchical-models, regression-models, time-series-models, survival-models, meta-analysis, model-diagnostics |
 | itc-modeling | tidy-itc-workflow, pairwise-ma-methodology, nma-methodology, maic-methodology, stc-methodology, ml-nmr-methodology |
-| r-tidy-modeling | tidymodels-workflow, recipes-patterns, resampling-strategies, model-tuning, model-evaluation, survival-analysis, clinical-trials, bayesian-modeling, epidemiology-methods, genomics-analysis, r-documentation-patterns, roxygen2-pkgdown |
+| r-tidy-modeling | tidymodels-workflow, tidymodels-review-patterns, recipes-patterns, resampling-strategies, model-tuning, model-evaluation, survival-analysis, clinical-trials, bayesian-modeling, epidemiology-methods, genomics-analysis, r-documentation-patterns, roxygen2-pkgdown, meta-analysis, network-meta-analysis, ipd-meta-analysis, diagnostic-accuracy, causal-mediation, mendelian-randomization, pharmacokinetics, health-economics, real-world-evidence, advanced-adaptive-trials |
 | clinical-trial-simulation | simtrial-fundamentals, mediana-fundamentals, multiplicity-methods, time-to-event-methods, group-sequential-methods, power-optimization-patterns, clinical-trial-design-patterns |
 
 ---
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License -- see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
