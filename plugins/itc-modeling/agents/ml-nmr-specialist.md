@@ -67,12 +67,9 @@ Expert ML-NMR specialist who synthesizes evidence across networks combining indi
 ### Model Specification
 
 #### Prior Functions
-- `prior_normal()` - Normal prior
-- `prior_half_normal()` - Half-normal (positive)
-- `prior_student_t()` - Student-t (robust)
-- `prior_half_cauchy()` - Half-Cauchy for variances
-- `prior_logistic()` - Logistic prior
-- `prior_exponential()` - Exponential prior
+- `normal()` - Normal prior
+- `half_normal()` - Half-normal prior for positive parameters such as heterogeneity
+- Use the prior constructors documented by the installed `multinma` version for other families
 
 #### Likelihood Options
 - Binary: Bernoulli with logit link
@@ -172,7 +169,7 @@ combined_net <- combine_network(
 combined_net <- add_integration(
   combined_net,
   age = distr(qnorm, mean = age_mean, sd = age_sd),
-  sex = distr(qbinom, prob = sex_prop),
+  sex = distr(qbern, prob = sex_prop),
   n_int = 500  # Number of integration points
 )
 
@@ -181,10 +178,10 @@ fit <- nma(
   combined_net,
   trt_effects = "random",
   regression = ~ age + sex + age:sex,  # Covariate effects
-  prior_intercept = prior_normal(0, 10),
-  prior_trt = prior_normal(0, 5),
-  prior_reg = prior_normal(0, 2),
-  prior_het = prior_half_normal(1),
+  prior_intercept = normal(0, 10),
+  prior_trt = normal(0, 5),
+  prior_reg = normal(0, 2),
+  prior_het = half_normal(1),
   adapt_delta = 0.95,
   chains = 4,
   iter = 4000,

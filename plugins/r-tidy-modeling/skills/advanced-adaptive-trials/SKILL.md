@@ -1,3 +1,8 @@
+---
+name: advanced-adaptive-trials
+description: Adaptive trial designs in R, including platform, basket, MAMS, response-adaptive, and interim decision methods.
+---
+
 # Advanced Adaptive Trial Designs in R
 
 ## Overview

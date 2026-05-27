@@ -1,3 +1,8 @@
+---
+name: survival-analysis
+description: Survival analysis in R, including Kaplan-Meier, Cox models, competing risks, RMST, and multi-state models.
+---
+
 # Survival Analysis Patterns
 
 ## Overview
@@ -135,6 +140,8 @@ ggcoxzph(ph_test)
 # Test for individual variables
 ph_test$table
 ```
+
+If proportional hazards is not credible, do not rely only on a single Cox hazard ratio or log-rank p-value. Consider prespecified alternatives such as time-varying treatment effects, weighted log-rank tests, milestone survival, or RMST.
 
 ### Stratified Cox Model
 

@@ -1,3 +1,8 @@
+---
+name: r-project-setup
+description: Set up reproducible R projects with renv, targets, organized folders, and reporting scaffolds.
+---
+
 # R Project Setup
 
 Initialize a new R data science project with best practices. This command uses the **r-data-architect** agent to create a well-structured, reproducible project foundation.

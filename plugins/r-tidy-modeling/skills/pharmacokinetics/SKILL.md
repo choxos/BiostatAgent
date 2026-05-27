@@ -1,3 +1,8 @@
+---
+name: pharmacokinetics
+description: Pharmacokinetic and pharmacodynamic analysis in R, including NCA, compartmental modeling, and bioequivalence.
+---
+
 # Pharmacokinetics and Pharmacodynamics in R
 
 ## Overview

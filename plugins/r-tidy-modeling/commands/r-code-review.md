@@ -1,3 +1,8 @@
+---
+name: r-code-review
+description: Review R code for tidyverse style, statistical correctness, reproducibility, and performance.
+---
+
 # R Code Review
 
 Comprehensive code review for R scripts and packages. This command uses the **r-code-reviewer** agent (Opus) to perform thorough quality assessment.

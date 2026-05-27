@@ -1,3 +1,8 @@
+---
+name: model-evaluation
+description: Model evaluation in R with performance metrics, calibration, ROC analysis, decision curves, and validation.
+---
+
 # Model Evaluation Patterns
 
 ## Overview

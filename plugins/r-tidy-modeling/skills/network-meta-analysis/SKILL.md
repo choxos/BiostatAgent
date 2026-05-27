@@ -1,3 +1,8 @@
+---
+name: network-meta-analysis
+description: Network meta-analysis in R, including network setup, consistency, treatment rankings, and league tables.
+---
+
 # Network Meta-Analysis in R
 
 ## Overview

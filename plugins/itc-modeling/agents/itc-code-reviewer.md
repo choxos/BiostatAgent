@@ -222,10 +222,10 @@ estimate_weights(..., n_boot_iteration = 1000)
 #### stc Patterns
 ```r
 # CHECK: Are interactions included?
-anchored_stc_binary(..., include_interactions = TRUE)
+response ~ treatment * (age_c + sex_c)
 
-# CHECK: Is robust SE used?
-anchored_stc_binary(..., robust_se = TRUE)
+# CHECK: Is uncertainty propagated?
+se_indirect <- sqrt(se_ipd_adjusted^2 + se_external^2)
 
 # CHECK: Are covariates centered correctly?
 # Centered on external population, not IPD mean
@@ -237,7 +237,7 @@ anchored_stc_binary(..., robust_se = TRUE)
 print(fit)  # R-hat, ESS should be checked
 
 # CHECK: Are priors specified explicitly?
-nma(..., prior_trt = prior_normal(0, 5))
+nma(..., prior_trt = normal(0, 5))
 
 # CHECK: Is consistency assessed?
 # Node-splitting should be performed

@@ -1,3 +1,8 @@
+---
+name: itc-analysis
+description: Orchestrate indirect treatment comparison workflows across pairwise meta-analysis, NMA, MAIC, STC, and ML-NMR.
+---
+
 # ITC Analysis - Multi-Agent Evidence Synthesis Orchestration
 
 Design and execute a complete indirect treatment comparison analysis for: $ARGUMENTS
@@ -236,7 +241,8 @@ prompt: |
      - With/without interactions
      - Comparison with MAIC
 
-  Use stc package. Provide complete R code.
+  Use transparent outcome-regression code. Do not assume a package-specific STC API
+  unless the user has supplied one. Provide complete R code.
 </Task>
 
 ### If ML-NMR:

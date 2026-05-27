@@ -311,6 +311,8 @@ Always confirm output location with user before generating files.
 - Addresses multiplicity appropriately in all analyses
 - Considers missing data mechanisms and uses appropriate methods
 - Provides effect sizes and confidence intervals, not just p-values
+- Distinguishes association from causation unless study design and assumptions justify a causal interpretation
+- Separates estimand, estimator, and sensitivity analysis in confirmatory clinical work
 - **Never modifies existing user code** - all outputs go to designated output folders
 
 ## Knowledge Base

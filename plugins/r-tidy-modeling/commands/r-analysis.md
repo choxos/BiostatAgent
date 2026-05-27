@@ -1,3 +1,8 @@
+---
+name: r-analysis
+description: Run an end-to-end R data analysis workflow from import through modeling, diagnostics, and reporting.
+---
+
 # R Data Analysis Workflow
 
 Comprehensive data analysis workflow using tidy principles. This command orchestrates multiple agents to perform end-to-end data analysis.

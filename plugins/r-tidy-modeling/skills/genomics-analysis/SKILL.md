@@ -1,3 +1,8 @@
+---
+name: genomics-analysis
+description: Genomics analysis in R with Bioconductor, differential expression, enrichment, batch correction, and single-cell workflows.
+---
+
 # Genomics Analysis in R
 
 ## Overview
@@ -213,7 +218,7 @@ ggplot(pca_data, aes(x = PC1, y = PC2, color = condition)) +
 library(clusterProfiler)
 library(org.Hs.eg.db)
 
-# Get significant gene list
+# Get FDR-adjusted gene list for enrichment
 sig_genes <- rownames(subset(res, padj < 0.05 & log2FoldChange > 1))
 
 # Convert to Entrez IDs

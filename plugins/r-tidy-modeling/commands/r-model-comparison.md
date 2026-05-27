@@ -1,3 +1,8 @@
+---
+name: r-model-comparison
+description: Compare R modeling workflows using resampling, performance metrics, calibration, and diagnostics.
+---
+
 # R Model Comparison Workflow
 
 Systematic model comparison using tidymodels workflow sets. This command orchestrates the **tidymodels-engineer** and **feature-engineer** agents to build and compare multiple models.

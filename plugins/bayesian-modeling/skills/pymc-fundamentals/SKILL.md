@@ -1,9 +1,9 @@
 ---
 name: pymc-fundamentals
-description: Foundational knowledge for writing PyMC 5 models including syntax, distributions, sampling, and ArviZ diagnostics. Use when creating or reviewing PyMC models.
+description: Foundational knowledge for writing current PyMC models including syntax, distributions, sampling, and ArviZ diagnostics. Use when creating or reviewing PyMC models.
 ---
 
-# PyMC 5 Fundamentals
+# PyMC Fundamentals
 
 ## When to Use This Skill
 

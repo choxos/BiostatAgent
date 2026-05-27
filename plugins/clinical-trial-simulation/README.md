@@ -26,7 +26,7 @@ This plugin supports two major R frameworks for clinical trial simulation:
 Add this plugin marketplace to Claude Code:
 
 ```bash
-/plugin marketplace add choxos/ClinicalTrialAgent
+/plugin marketplace add choxos/BiostatAgent
 ```
 
 ### Step 2: Install the Plugin
@@ -89,11 +89,12 @@ results <- sim_fixed_n(
   enroll_rate = enroll_rate,
   fail_rate = fail_rate,
   total_duration = 36,
-  analysis_method = wlr(weight = fh(rho = 0, gamma = 0))
+  timing_type = 2,
+  rho_gamma = data.frame(rho = 0, gamma = 0)
 )
 
 # Power estimate
-mean(results$z <= -qnorm(0.975))
+mean(results$z <= qnorm(0.025))
 ```
 
 ### Sample Size Determination
@@ -168,7 +169,8 @@ results <- sim_gs_n(
   sample_size = 450,
   enroll_rate = enroll_rate,
   fail_rate = fail_rate,
-  test = wlr(weight = fh(rho = 0, gamma = 0)),
+  test = wlr,
+  weight = fh(rho = 0, gamma = 0),
   cut = list(cut_ia1, cut_ia2, cut_fa),
   seed = 12345
 )
@@ -246,7 +248,16 @@ results <- CSE(data.model, analysis.model, evaluation.model,
                SimParameters(n.sims = 10000, proc.load = "full", seed = 42))
 
 # Generate Word report
-GenerateReport(results, "cse_report.docx")
+presentation.model <- PresentationModel() +
+  Project(title = "Clinical Scenario Evaluation") +
+  Section(by = "outcome.parameter") +
+  Table(by = "sample.size")
+
+GenerateReport(
+  presentation.model = presentation.model,
+  cse.results = results,
+  report.filename = "cse_report.docx"
+)
 ```
 
 ## Components
@@ -296,7 +307,7 @@ GenerateReport(results, "cse_report.docx")
 ## Repository Structure
 
 ```
-ClinicalTrialAgent/
+BiostatAgent/
 ├── .claude-plugin/
 │   └── marketplace.json              # Plugin configuration
 ├── plugins/clinical-trial-simulation/

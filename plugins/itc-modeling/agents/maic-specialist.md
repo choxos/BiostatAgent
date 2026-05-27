@@ -117,9 +117,10 @@ weights_obj <- estimate_weights(
 # Step 6: Check weights
 check_weights(weights_obj)
 # Look for:
-# - ESS > 50% of original
+# - ESS large enough for useful precision
 # - No extreme weights
 # - Good covariate balance
+# ESS thresholds are diagnostics, not proof that assumptions hold.
 
 # Step 7a: Anchored MAIC (binary endpoint)
 result_binary <- maic_anchored(

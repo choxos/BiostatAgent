@@ -1,3 +1,8 @@
+---
+name: roxygen2-pkgdown
+description: R package documentation with roxygen2 and pkgdown, including reference topics, articles, and site configuration.
+---
+
 # roxygen2 and pkgdown
 
 ## Overview

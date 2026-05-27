@@ -17,7 +17,7 @@ description: Core Mediana package functions for Clinical Scenario Evaluation (CS
 
 ## Package Overview
 
-**Mediana** (v1.0.9) by Gautier Paux and Alex Dmitrienko provides a general framework for clinical trial simulations based on the Clinical Scenario Evaluation approach (Benda et al., 2010).
+**Mediana** by Gautier Paux and Alex Dmitrienko provides a general framework for clinical trial simulations based on the Clinical Scenario Evaluation approach (Benda et al., 2010).
 
 ### CSE Framework Components
 

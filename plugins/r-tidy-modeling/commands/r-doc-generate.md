@@ -1,3 +1,8 @@
+---
+name: r-doc-generate
+description: Generate R package and project documentation with roxygen2, pkgdown, Quarto, and vignettes.
+---
+
 # R Documentation Generation
 
 Generate comprehensive documentation from R codebases. This command uses the **r-docs-architect** agent to create roxygen2 documentation, README files, pkgdown sites, and architecture documentation.

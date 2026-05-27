@@ -236,7 +236,11 @@ summary(cox_model)
 ggforest(cox_model, data = trial_data)
 
 # Check proportional hazards assumption
-cox.zph(cox_model)
+ph_test <- cox.zph(cox_model)
+print(ph_test)
+
+# If proportional hazards is questionable, report a prespecified
+# non-PH sensitivity such as time-varying effects or RMST.
 ```
 
 ### Clinical Trial Analysis (CONSORT)
@@ -289,8 +293,10 @@ baseline_table <- trial_data |>
       comorbidities ~ "Comorbidities"
     )
   ) |>
-  add_p() |>
   modify_header(label = "**Characteristic**")
+
+# For randomized trials, baseline tables should emphasize descriptive balance.
+# Add baseline p-values only if required by the SAP or journal.
 
 # Primary efficacy analysis (ITT)
 primary_model <- lm(

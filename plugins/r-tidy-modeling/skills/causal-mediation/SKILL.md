@@ -1,3 +1,8 @@
+---
+name: causal-mediation
+description: Causal mediation analysis in R, including direct and indirect effects, assumptions, and sensitivity analysis.
+---
+
 # Causal Mediation Analysis in R
 
 ## Overview

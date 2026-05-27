@@ -1,0 +1,14 @@
+{
+  "name": "clinical-trial-simulation",
+  "displayName": "Clinical Trial Simulation",
+  "version": "1.0.0",
+  "description": "Clinical trial simulation workflows for power, sample size, group sequential designs, and multiplicity.",
+  "author": {
+    "name": "Ahmad Sofi-Mahmudi",
+    "email": "choxos@users.noreply.github.com",
+    "url": "https://github.com/choxos"
+  },
+  "repository": "https://github.com/choxos/BiostatAgent",
+  "license": "MIT",
+  "keywords": ["clinical-trials", "simulation", "power-analysis", "sample-size", "survival-analysis", "multiplicity"]
+}

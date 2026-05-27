@@ -1,3 +1,8 @@
+---
+name: ipd-meta-analysis
+description: Individual participant data meta-analysis in R, including one-stage, two-stage, survival, and IPD with aggregate data.
+---
+
 # Individual Participant Data Meta-Analysis in R
 
 ## Overview

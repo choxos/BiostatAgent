@@ -34,9 +34,7 @@ For time-to-event trials, information ≈ number of events.
 
 ### Type I Error Spending
 
-The key constraint: Σ α_k ≤ α (overall Type I error)
-
-Spending functions distribute alpha across analyses.
+The key constraint is that the design controls the overall Type I error at the planned alpha level. Spending functions define cumulative alpha spending over information time, and boundaries are derived using the joint distribution of sequential test statistics. They are not obtained by simply assigning independent nominal alpha levels to each look.
 
 ## Alpha Spending Functions
 

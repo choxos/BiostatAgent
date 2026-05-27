@@ -171,14 +171,14 @@ Problems with rankings:
 
 #### Treatment Effects
 ```r
-prior_trt = prior_normal(0, sd)
+prior_trt = normal(0, sd)
 # sd should be large enough to be weakly informative
 # Consider scale of effect measure (log OR ~2-3 is large)
 ```
 
 #### Heterogeneity (τ)
 ```r
-prior_het = prior_half_normal(scale)
+prior_het = half_normal(scale)
 # Scale depends on expected heterogeneity
 # Turner et al. informative priors available
 ```

@@ -205,7 +205,7 @@ generated quantities {
 
 | Context | tau prior |
 |---------|-----------|
-| Pharmacological | `half_normal(0, 0.5)` |
-| Medical devices | `half_normal(0, 1)` |
-| Behavioral | `half_cauchy(0, 1)` |
-| Default | `half_cauchy(0, 0.5)` |
+| Pharmacological | `normal(0, 0.5)` with `tau <lower=0>` |
+| Medical devices | `normal(0, 1)` with `tau <lower=0>` |
+| Behavioral | `cauchy(0, 1)` with `tau <lower=0>` |
+| Default | `cauchy(0, 0.5)` with `tau <lower=0>` |

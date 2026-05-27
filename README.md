@@ -43,7 +43,7 @@ Install all plugins or select specific ones:
 # Core dependencies (install as needed)
 install.packages(c(
   # Bayesian modeling
-  "cmdstanr", "rstan", "R2jags", "R2WinBUGS", "bayesplot", "loo",
+  "rstan", "R2jags", "R2WinBUGS", "bayesplot", "loo",
   # ITC/NMA
   "meta", "netmeta", "gemtc", "multinma", "maicplus",
   # Tidy modeling
@@ -51,6 +51,10 @@ install.packages(c(
   # Clinical trials
   "simtrial", "Mediana", "gsDesign2", "survival"
 ))
+
+# CmdStanR is distributed from the Stan R-universe, not CRAN.
+install.packages("cmdstanr", repos = c("https://stan-dev.r-universe.dev", getOption("repos")))
+cmdstanr::install_cmdstan()
 ```
 
 ---
@@ -61,8 +65,8 @@ install.packages(c(
 
 Create, review, and validate Bayesian models across four languages:
 
-- **Stan 2.37** -- Modern HMC/NUTS sampling with cmdstanr
-- **PyMC 5** -- Python-native Bayesian modeling with ArviZ
+- **Stan via cmdstanr** -- Modern HMC/NUTS sampling with the current installed CmdStan
+- **PyMC** -- Python-native Bayesian modeling with ArviZ diagnostics
 - **JAGS** -- Cross-platform Gibbs sampling with R2jags
 - **WinBUGS** -- Classic BUGS implementation with R2WinBUGS
 

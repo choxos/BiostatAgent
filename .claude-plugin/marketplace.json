@@ -7,8 +7,7 @@
   },
   "metadata": {
     "description": "Comprehensive biostatistics agent ecosystem for R with 30 specialized agents, 17 workflow commands, and 45 methodology skills covering Bayesian modeling, indirect treatment comparisons, tidy R workflows, and clinical trial simulations",
-    "version": "1.0.0",
-    "license": "MIT"
+    "version": "1.0.0"
   },
   "plugins": [
     {

@@ -10,8 +10,8 @@ This plugin provides AI-assisted workflows for Bayesian statistical modeling acr
 
 | Language | Interface | Parameterization | Sampling |
 |----------|-----------|------------------|----------|
-| **Stan 2.37** | cmdstanr | SD (σ) | HMC/NUTS |
-| **PyMC 5** | Python native | SD (σ) | NUTS/Metropolis |
+| **Stan** | cmdstanr | SD (σ) | HMC/NUTS |
+| **PyMC** | Python native | SD (σ) | NUTS/Metropolis |
 | **JAGS** | R2jags | Precision (τ = 1/σ²) | Gibbs |
 | **WinBUGS** | R2WinBUGS | Precision (τ = 1/σ²) | Gibbs |
 
@@ -68,8 +68,8 @@ Execute models with synthetic data to validate convergence.
 | Agent | Model | Purpose |
 |-------|-------|---------|
 | `model-architect` | Haiku | Routes requests to language specialists |
-| `stan-specialist` | Sonnet | Stan 2.37 expert with cmdstanr integration |
-| `pymc-specialist` | Sonnet | PyMC 5 expert with ArviZ diagnostics |
+| `stan-specialist` | Sonnet | Stan expert with cmdstanr integration |
+| `pymc-specialist` | Sonnet | PyMC expert with ArviZ diagnostics |
 | `bugs-specialist` | Sonnet | JAGS/WinBUGS expert with precision parameterization |
 | `model-reviewer` | Sonnet | Reviews models for correctness and efficiency |
 | `test-runner` | Haiku | Executes models with synthetic data |
@@ -77,8 +77,8 @@ Execute models with synthetic data to validate convergence.
 ## Skills
 
 ### Language Fundamentals
-- **stan-fundamentals** — Stan 2.37 syntax, blocks, distributions, cmdstanr integration
-- **pymc-fundamentals** — PyMC 5 syntax, distributions, ArviZ diagnostics
+- **stan-fundamentals** — Modern Stan syntax, blocks, distributions, cmdstanr integration
+- **pymc-fundamentals** — Current PyMC syntax, distributions, ArviZ diagnostics
 - **bugs-fundamentals** — JAGS/WinBUGS syntax, precision parameterization, R integration
 
 ### Model Types
@@ -215,7 +215,7 @@ model {
 
 ```r
 # Stan
-install.packages("cmdstanr", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
+install.packages("cmdstanr", repos = c("https://stan-dev.r-universe.dev", getOption("repos")))
 cmdstanr::install_cmdstan()
 
 # JAGS
@@ -253,7 +253,7 @@ pip install pymc arviz numpy pandas
 ## References
 
 - Stan Development Team (2024). Stan Modeling Language Users Guide and Reference Manual, 2.37
-- Salvatier J, Wiecki TV, Fonnesbeck C (2016). Probabilistic programming in Python using PyMC3
+- Abril-Pla O, et al. (2023). PyMC: A modern, and comprehensive probabilistic programming framework in Python
 - Plummer M (2003). JAGS: A program for analysis of Bayesian graphical models using Gibbs sampling
 - Gelman A, et al. (2013). Bayesian Data Analysis, Third Edition
 

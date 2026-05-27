@@ -1,3 +1,8 @@
+---
+name: diagnostic-accuracy
+description: Diagnostic accuracy analysis in R, including sensitivity, specificity, ROC curves, likelihood ratios, and decision curves.
+---
+
 # Diagnostic Accuracy Analysis in R
 
 ## Overview

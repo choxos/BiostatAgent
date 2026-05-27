@@ -1,3 +1,8 @@
+---
+name: r-tutorial-create
+description: Create R tutorials with clear learning objectives, runnable examples, and exercises.
+---
+
 # R Tutorial Creation
 
 Create step-by-step tutorials and educational content from R code. This command uses the **r-tutorial-engineer** agent to transform code into progressive learning experiences.

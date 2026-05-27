@@ -1,0 +1,14 @@
+{
+  "name": "r-tidy-modeling",
+  "displayName": "R Tidy Modeling",
+  "version": "1.0.0",
+  "description": "Expert agents for R data science and biostatistics using tidyverse and tidymodels.",
+  "author": {
+    "name": "Ahmad Sofi-Mahmudi",
+    "email": "choxos@users.noreply.github.com",
+    "url": "https://github.com/choxos"
+  },
+  "repository": "https://github.com/choxos/BiostatAgent",
+  "license": "MIT",
+  "keywords": ["r", "tidyverse", "tidymodels", "biostatistics", "clinical-trials", "reproducible-research"]
+}

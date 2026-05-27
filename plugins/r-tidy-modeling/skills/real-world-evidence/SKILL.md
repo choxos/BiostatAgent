@@ -1,3 +1,8 @@
+---
+name: real-world-evidence
+description: Real-world evidence analysis in R, including target trial emulation, propensity scores, external controls, and bias analysis.
+---
+
 # Real-World Evidence Analysis in R
 
 ## Overview

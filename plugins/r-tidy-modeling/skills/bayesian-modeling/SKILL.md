@@ -1,3 +1,8 @@
+---
+name: bayesian-modeling
+description: Bayesian modeling in R with brms, rstanarm, priors, diagnostics, posterior checks, and model comparison.
+---
+
 # Bayesian Modeling in R
 
 ## Overview

@@ -1,0 +1,14 @@
+{
+  "name": "bayesian-modeling",
+  "displayName": "Bayesian Modeling",
+  "version": "1.1.0",
+  "description": "Create, review, and validate Bayesian models in Stan, PyMC, JAGS, and WinBUGS.",
+  "author": {
+    "name": "Ahmad Sofi-Mahmudi",
+    "email": "choxos@users.noreply.github.com",
+    "url": "https://github.com/choxos"
+  },
+  "repository": "https://github.com/choxos/BiostatAgent",
+  "license": "MIT",
+  "keywords": ["bayesian", "stan", "pymc", "jags", "winbugs", "mcmc"]
+}

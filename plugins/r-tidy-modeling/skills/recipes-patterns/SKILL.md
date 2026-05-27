@@ -1,3 +1,8 @@
+---
+name: recipes-patterns
+description: Feature engineering patterns with recipes, including imputation, encoding, normalization, interactions, and leakage control.
+---
+
 # Recipes Feature Engineering Patterns
 
 ## Overview

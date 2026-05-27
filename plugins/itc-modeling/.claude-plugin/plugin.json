@@ -1,0 +1,14 @@
+{
+  "name": "itc-modeling",
+  "displayName": "ITC Modeling",
+  "version": "1.0.0",
+  "description": "Expert agents for indirect treatment comparison modeling in R.",
+  "author": {
+    "name": "Ahmad Sofi-Mahmudi",
+    "email": "choxos@users.noreply.github.com",
+    "url": "https://github.com/choxos"
+  },
+  "repository": "https://github.com/choxos/BiostatAgent",
+  "license": "MIT",
+  "keywords": ["indirect-treatment-comparison", "meta-analysis", "network-meta-analysis", "maic", "stc", "ml-nmr"]
+}

@@ -36,7 +36,7 @@ You are a Bayesian modeling architect specializing in statistical model design a
 - Requires cmdstanr for R integration
 - Best for: Complex models, high dimensions, efficiency
 
-### PyMC 5 (DEFAULT for Python users)
+### PyMC (DEFAULT for Python users)
 - Python-native Bayesian modeling library
 - Uses standard deviation parameterization (like Stan)
 - Uses ArviZ for diagnostics

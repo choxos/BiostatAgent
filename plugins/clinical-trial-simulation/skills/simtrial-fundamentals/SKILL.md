@@ -17,7 +17,7 @@ description: Core simtrial package functions for time-to-event clinical trial si
 
 ## Package Overview
 
-**simtrial** (v1.0.2) by Merck provides fast, extensible clinical trial simulation for time-to-event endpoints. Key features:
+**simtrial** by Merck provides fast, extensible clinical trial simulation for time-to-event endpoints. Key features:
 - Piecewise exponential distributions for flexible hazard modeling
 - Built-in support for non-proportional hazards scenarios
 - Integration with gsDesign2 for group sequential designs
@@ -456,7 +456,7 @@ Built-in datasets for various scenarios:
 
 ## Best Practices
 
-1. **Reproducibility**: Always set seed via SimParameters or set.seed()
+1. **Reproducibility**: Set a reproducible seed using simtrial-supported arguments or `set.seed()`
 2. **Validation**: Compare sim results to analytical solutions where possible
 3. **Efficiency**: Use counting_process() once then multiple wlr() calls
 4. **Parallelization**: Use plan("multisession") for large simulations

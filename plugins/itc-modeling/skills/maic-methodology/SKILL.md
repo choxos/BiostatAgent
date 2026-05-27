@@ -79,7 +79,7 @@ Include covariates that are:
 
 ### What NOT to Include
 - Variables balanced between populations (wasteful)
-- Pure prognostic factors in anchored MAIC (cancel out)
+- Pure prognostic factors in anchored MAIC unless they are also effect modifiers or needed for a prespecified sensitivity analysis
 - Variables not reported in AgD (impossible to match)
 - Too many variables (ESS concerns)
 
@@ -109,6 +109,8 @@ that would give same precision as weighted analysis.
 | 50-70% | Acceptable | Proceed with caution |
 | 30-50% | Concerning | Reconsider covariates |
 | <30% | Poor | Results likely unreliable |
+
+These thresholds are practical diagnostics, not validity guarantees. A high ESS does not address unmeasured effect modification, incompatible outcome definitions, or lack of clinical exchangeability.
 
 ### Causes of Low ESS
 - Many covariates included

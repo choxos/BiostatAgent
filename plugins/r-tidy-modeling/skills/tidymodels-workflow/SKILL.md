@@ -1,3 +1,8 @@
+---
+name: tidymodels-workflow
+description: Tidymodels workflow patterns with recipes, models, workflows, resampling, tuning, and final evaluation.
+---
+
 # tidymodels Workflow Patterns
 
 ## Overview

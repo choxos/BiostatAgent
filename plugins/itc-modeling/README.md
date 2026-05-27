@@ -10,11 +10,11 @@ This plugin provides expert agents for indirect treatment comparison (ITC) metho
 
 | Method | Data Requirements | Key Assumption | R Package |
 |--------|-------------------|----------------|-----------|
-| **Pairwise MA** | AgD from multiple trials | Common comparator | meta, metafor, bayesmeta |
-| **NMA** | AgD network | Transitivity, consistency | netmeta, gemtc |
-| **MAIC** | IPD vs AgD | No unmeasured effect modifiers | maicplus |
-| **STC** | IPD vs AgD | Correct outcome model | Custom/stc |
-| **ML-NMR** | Mixed IPD + AgD | Exchangeability | multinma |
+| **Pairwise MA** | AgD from multiple studies of the same comparison | Exchangeable studies for that comparison | meta, metafor, bayesmeta |
+| **NMA** | AgD network | Transitivity and coherence of direct and indirect evidence | netmeta, gemtc |
+| **MAIC** | IPD vs AgD | All relevant effect modifiers observed and adjusted; unanchored analyses also require all prognostic factors | maicplus |
+| **STC** | IPD vs AgD | Correctly specified outcome model with relevant effect modifiers | Custom regression code |
+| **ML-NMR** | Mixed IPD + AgD | Exchangeability after covariate adjustment | multinma |
 
 ## Quick Start
 
@@ -103,13 +103,16 @@ Review existing ITC code for methodological correctness and best practices.
          │                     │       │                   │
     ┌────┴────┐          ┌────┴────┐  │            ┌──────┴──────┐
     │ MAIC or │          │Unanchored│  │            │  Cannot     │
-    │   STC   │          │  MAIC   │  │            │  compare    │
+    │   STC   │          │MAIC/STC* │  │            │  compare    │
     └─────────┘          └─────────┘  │            └─────────────┘
                                       │
                               ┌───────┴───────┐
-                              │               │
+                             │               │
                           Pairwise          Network
                              MA               MA
+
+*Unanchored population-adjusted analyses require much stronger assumptions
+about absolute outcome transportability and all prognostic factors.
 ```
 
 ## Usage Examples
@@ -208,36 +211,56 @@ Binary endpoint (response rate).
 ```r
 library(maicplus)
 
-# Specify effect modifiers to match
-match_vars <- c("age", "sex_male", "baseline_severity")
+# Specify aggregate targets for effect modifiers to match
+agd_targets <- c(
+  age = agd_summary$age_mean,
+  sex_male = agd_summary$sex_male_prop,
+  baseline_severity = agd_summary$baseline_severity_mean
+)
+
+# Center IPD on the aggregate target population
+ipd_centered <- center_ipd(ipd_data, agd_targets)
+centered_cols <- paste0(names(agd_targets), "_centered")
 
 # Estimate weights
-weighted_data <- estimate_weights(
-  data = ipd_data,
-  centered_colnames = match_vars,
-  agd_means = agd_summary[match_vars]
+weights_obj <- estimate_weights(
+  data = ipd_centered,
+  centered_colnames = centered_cols,
+  n_boot_iteration = 1000,
+  set_seed_boot = 1234
 )
 
 # Check effective sample size
-ess <- weighted_data$ess
+ess <- weights_obj$ess
 cat("Original N:", nrow(ipd_data), "\n")
 cat("Effective sample size:", round(ess, 1), "\n")
 cat("ESS reduction:", round((1 - ess/nrow(ipd_data)) * 100, 1), "%\n")
 
 # Weight diagnostics
-summarize_wts(weighted_data)
+check_weights(weights_obj)
+
+# Build pseudo-IPD from the published aggregate binary results
+pseudo_ipd <- get_pseudo_ipd_binary(
+  trt_agd = "Drug B",
+  trt_common = "Placebo",
+  n_agd = agd_summary$n_B,
+  event_agd = agd_summary$events_B,
+  n_common = agd_summary$n_placebo,
+  event_common = agd_summary$events_placebo
+)
 
 # Anchored comparison (binary endpoint)
 result <- maic_anchored(
-  weights_object = weighted_data,
-  ipd_data = ipd_data,
-  agd_data = agd_data,
-  ipd_event = "response",
-  agd_n_trt = n_B,
-  agd_event_trt = events_B,
-  agd_n_ctrl = n_placebo_B,
-  agd_event_ctrl = events_placebo_B,
-  binary_method = "bucher"
+  weights_object = weights_obj,
+  ipd = ipd_data,
+  pseudo_ipd = pseudo_ipd,
+  trt_ipd = "Drug A",
+  trt_agd = "Drug B",
+  trt_common = "Placebo",
+  endpoint_type = "binary",
+  endpoint_name = "Response",
+  eff_measure = "OR",
+  boot_ci_type = "perc"
 )
 
 # Results
@@ -296,18 +319,19 @@ predict(mlnmr_fit, newdata = target_population, type = "response")
 
 ### Network Meta-Analysis
 - **Transitivity**: Effect modifiers are balanced across comparisons
-- **Consistency**: Direct and indirect evidence agree
-- No closed loops with conflicting evidence
+- **Consistency/coherence**: Direct and indirect evidence should agree when closed loops are present
+- Absence of closed loops limits empirical inconsistency checks
 
 ### MAIC
-- All effect modifiers are observed and matched
-- No unmeasured confounding after weighting
-- Target population represented by AgD trial
+- Anchored MAIC: all relevant effect modifiers are observed and matched
+- Unanchored MAIC: all relevant effect modifiers and prognostic factors are observed and matched
+- Adequate covariate overlap is needed; ESS is a diagnostic, not proof of validity
+- Target population is represented by the AgD trial summaries
 
 ### STC
-- Outcome model correctly specified
-- Effect modifiers correctly identified
-- Linear (or specified) relationship with outcome
+- Outcome model, link function, interactions, and functional forms are correctly specified
+- Effect modifiers are selected from clinical and statistical rationale, not significance testing alone
+- Anchored STC requires observed effect modifiers; unanchored STC also requires observed prognostic factors and transportable absolute outcomes
 
 ### ML-NMR
 - IPD and AgD are exchangeable after adjustment
@@ -321,8 +345,7 @@ predict(mlnmr_fit, newdata = target_population, type = "response")
 install.packages(c("meta", "metafor", "netmeta", "gemtc"))
 
 # MAIC
-# Install maicplus from GitHub
-remotes::install_github("hta-pharma/maicplus")
+install.packages("maicplus")
 
 # ML-NMR
 install.packages("multinma")

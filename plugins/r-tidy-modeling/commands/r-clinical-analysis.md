@@ -1,3 +1,8 @@
+---
+name: r-clinical-analysis
+description: Run a regulatory-oriented clinical trial analysis workflow with populations, estimands, TLFs, and reports.
+---
+
 # R Clinical Analysis Workflow
 
 Regulatory-compliant clinical trial analysis workflow. This command orchestrates the **biostatistician** agent with support from **viz-specialist** and **reporting-engineer** for comprehensive clinical data analysis.
@@ -20,6 +25,8 @@ Perform analysis based on endpoint type:
 - **Binary endpoints**: CMH, logistic regression, responder analysis
 - **Time-to-event**: Kaplan-Meier, Cox regression, RMST
 - **Count data**: Poisson/negative binomial models
+
+For confirmatory analyses, define the estimand before choosing the estimator, including treatment condition, population, endpoint, intercurrent-event strategy, and summary measure. Align missing-data handling and multiplicity control with the SAP.
 
 ### 4. Tables, Listings, and Figures (TLF)
 Generate standard clinical outputs:

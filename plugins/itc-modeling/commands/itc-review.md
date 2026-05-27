@@ -1,3 +1,8 @@
+---
+name: itc-review
+description: Review indirect treatment comparison code and methods for scientific validity and implementation quality.
+---
+
 # ITC Code Review - Expert R Code Analysis and Amendment
 
 Review ITC analysis code for: $ARGUMENTS

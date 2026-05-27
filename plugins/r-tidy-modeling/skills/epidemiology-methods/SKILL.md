@@ -1,3 +1,8 @@
+---
+name: epidemiology-methods
+description: Epidemiological analysis methods in R for cohort, case-control, confounding control, and causal inference.
+---
+
 # Epidemiology Methods in R
 
 ## Overview

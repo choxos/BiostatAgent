@@ -1,3 +1,8 @@
+---
+name: meta-analysis
+description: Pairwise meta-analysis in R, including fixed and random effects, heterogeneity, bias checks, and forest plots.
+---
+
 # Meta-Analysis Methods in R
 
 ## Overview

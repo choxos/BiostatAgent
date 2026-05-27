@@ -83,7 +83,6 @@ library(tidyverse)
 library(meta)       # Pairwise MA
 library(netmeta)    # NMA
 library(maicplus)   # MAIC
-library(stc)        # STC
 library(multinma)   # ML-NMR
 
 # Set global options
@@ -363,7 +362,11 @@ result <- maic_anchored(weights, ipd, pseudo_ipd)
 # Good
 stopifnot(inherits(weights, "maicplus_estimate_weights"))
 stopifnot(nrow(ipd) > 0)
-result <- maic_anchored(weights, ipd, pseudo_ipd)
+result <- maic_anchored(
+  weights_object = weights,
+  ipd = ipd,
+  pseudo_ipd = pseudo_ipd
+)
 ```
 
 ### 3. Unreproducible Operations

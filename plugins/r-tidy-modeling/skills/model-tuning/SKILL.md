@@ -1,3 +1,8 @@
+---
+name: model-tuning
+description: Hyperparameter tuning in tidymodels with grids, Bayesian optimization, racing, and workflow finalization.
+---
+
 # Model Tuning Patterns
 
 ## Overview

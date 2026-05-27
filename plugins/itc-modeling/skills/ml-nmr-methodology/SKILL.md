@@ -88,7 +88,7 @@ Discrete approximation to the integral over AgD population:
 add_integration(
   network,
   age = distr(qnorm, mean = 62, sd = 10),
-  sex = distr(qbinom, prob = 0.55),
+  sex = distr(qbern, prob = 0.55),
   n_int = 500
 )
 
@@ -113,8 +113,8 @@ add_integration(
 # Continuous: Normal distribution
 age = distr(qnorm, mean = 62, sd = 10)
 
-# Binary: Bernoulli (using binomial with size=1)
-sex = distr(qbinom, prob = 0.55)
+# Binary: Bernoulli
+sex = distr(qbern, prob = 0.55)
 
 # Categorical: Discrete distribution
 # May need special handling
@@ -156,10 +156,10 @@ In ML-NMR regression formula:
 ```r
 nma(
   ...,
-  prior_intercept = prior_normal(0, 10),    # Baseline risk
-  prior_trt = prior_normal(0, 5),           # Treatment effects
-  prior_reg = prior_normal(0, 2),           # Regression coefficients
-  prior_het = prior_half_normal(1)          # Heterogeneity
+  prior_intercept = normal(0, 10),    # Baseline risk
+  prior_trt = normal(0, 5),           # Treatment effects
+  prior_reg = normal(0, 2),           # Regression coefficients
+  prior_het = half_normal(1)          # Heterogeneity
 )
 
 # Considerations:
@@ -359,7 +359,7 @@ network <- combine_network(ipd_net, agd_net)
 network <- add_integration(
   network,
   age = distr(qnorm, mean = age_mean, sd = age_sd),
-  sex = distr(qbinom, prob = sex_prop),
+  sex = distr(qbern, prob = sex_prop),
   n_int = 500
 )
 
@@ -368,10 +368,10 @@ fit <- nma(
   network,
   trt_effects = "random",
   regression = ~ age + sex,
-  prior_intercept = prior_normal(0, 10),
-  prior_trt = prior_normal(0, 5),
-  prior_reg = prior_normal(0, 2),
-  prior_het = prior_half_normal(1),
+  prior_intercept = normal(0, 10),
+  prior_trt = normal(0, 5),
+  prior_reg = normal(0, 2),
+  prior_het = half_normal(1),
   adapt_delta = 0.95,
   chains = 4,
   iter = 4000,

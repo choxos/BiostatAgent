@@ -1,3 +1,8 @@
+---
+name: tidymodels-review-patterns
+description: Review patterns for tidymodels workflows, including leakage, resampling, tuning, metrics, and reproducibility.
+---
+
 # Tidymodels Code Review Patterns
 
 ## Overview

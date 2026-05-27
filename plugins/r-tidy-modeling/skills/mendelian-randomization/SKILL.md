@@ -1,3 +1,8 @@
+---
+name: mendelian-randomization
+description: Mendelian randomization in R, including instrument selection, two-sample MR, pleiotropy checks, and sensitivity analysis.
+---
+
 # Mendelian Randomization in R
 
 ## Overview
@@ -229,9 +234,9 @@ presso$`MR-PRESSO results`$`Distortion Test`     # Distortion test
 ```r
 library(TwoSampleMR)
 
-# Test correct causal direction
+# Assess whether the data are more consistent with the assumed direction
 dat <- steiger_filtering(dat)
-table(dat$steiger_dir)       # TRUE = correct direction
+table(dat$steiger_dir)       # TRUE = retained under Steiger direction check
 
 # Keep only correctly oriented SNPs
 dat_filtered <- dat[dat$steiger_dir == TRUE | is.na(dat$steiger_dir), ]
@@ -513,7 +518,7 @@ mr_report <- create_mr_report(dat, results, het, pleiotropy)
 1. **Instrument strength**: Ensure F-statistic > 10 for all instruments
 2. **Multiple methods**: Report IVW, MR-Egger, weighted median, and MR-PRESSO
 3. **Sensitivity analyses**: Always check heterogeneity, pleiotropy, and leave-one-out
-4. **Steiger filtering**: Verify causal direction is correct
+4. **Steiger filtering**: Assess support for the assumed direction; it does not prove direction
 5. **Visualization**: Include scatter, forest, and funnel plots
 6. **Bidirectional**: Consider reverse causation when biologically plausible
 7. **Biological plausibility**: Interpret results in biological context

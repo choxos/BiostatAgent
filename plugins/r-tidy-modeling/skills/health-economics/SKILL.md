@@ -1,3 +1,8 @@
+---
+name: health-economics
+description: Health economic analysis in R, including cost-effectiveness, QALYs, decision models, and budget impact.
+---
+
 # Health Economics Evaluation in R
 
 ## Overview

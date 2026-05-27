@@ -1,3 +1,8 @@
+---
+name: r-documentation-patterns
+description: R documentation patterns with roxygen2, pkgdown, vignettes, examples, and package site structure.
+---
+
 # R Documentation Patterns
 
 ## Overview

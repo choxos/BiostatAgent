@@ -1,3 +1,8 @@
+---
+name: clinical-trials
+description: Clinical trial design and analysis methods in R, including randomization, estimands, multiplicity, and reporting.
+---
+
 # Clinical Trials Statistical Methods
 
 ## Overview
@@ -149,6 +154,28 @@ minirand(
   p = 0.85  # Probability of assigning to minimizing treatment
 )
 ```
+
+## Baseline Characteristics
+
+For randomized trials, baseline tables should primarily describe the randomized groups and assess clinically meaningful imbalance. Routine baseline hypothesis tests are usually not appropriate because any baseline differences arise after randomization and p-values mostly reflect sample size.
+
+```r
+library(gtsummary)
+
+baseline_table <- adsl |>
+  dplyr::filter(ITTFL == "Y") |>
+  dplyr::select(TRT01P, AGE, SEX, BMI, BASELINE_SCORE) |>
+  tbl_summary(
+    by = TRT01P,
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    )
+  ) |>
+  modify_header(label = "**Characteristic**")
+```
+
+If the SAP requires standardized mean differences, report them as descriptive diagnostics rather than randomization tests.
 
 ## Group Sequential Designs
 
@@ -412,10 +439,11 @@ qi_test(outcome ~ treatment | subgroup, data = df)
 
 ```r
 # Define estimand components:
-# 1. Population
-# 2. Variable (endpoint)
-# 3. Intercurrent events and strategies
-# 4. Population-level summary
+# 1. Treatment condition
+# 2. Population
+# 3. Variable (endpoint)
+# 4. Intercurrent events and strategies
+# 5. Population-level summary measure
 
 # Example: Treatment policy estimand with MMRM
 mmrm_fit <- mmrm(
@@ -423,6 +451,8 @@ mmrm_fit <- mmrm(
   data = data_all_randomized  # Include all randomized (ITT)
 )
 ```
+
+Missing-data methods should follow the estimand and the plausible missingness mechanism. Prespecify primary handling and sensitivity analyses rather than defaulting to complete-case analysis.
 
 ### CONSORT Diagram
 

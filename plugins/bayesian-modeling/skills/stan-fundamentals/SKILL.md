@@ -1,6 +1,6 @@
 ---
 name: stan-fundamentals
-description: Foundational knowledge for writing Stan 2.37 models including program structure, type system, distributions, and best practices. Use when creating or reviewing Stan models.
+description: Foundational knowledge for writing modern Stan models including program structure, type system, distributions, and best practices. Use when creating or reviewing Stan models.
 ---
 
 # Stan Fundamentals
@@ -131,7 +131,7 @@ mu ~ normal(0, 10);
 
 // Scale parameters
 sigma ~ exponential(1);
-sigma ~ cauchy(0, 2.5);  // half-Cauchy when sigma > 0
+sigma ~ cauchy(0, 2.5);  // half-Cauchy when sigma has lower=0
 
 // Probabilities
 theta ~ beta(1, 1);  // Uniform on (0,1)

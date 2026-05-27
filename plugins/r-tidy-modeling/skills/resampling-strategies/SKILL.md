@@ -1,3 +1,8 @@
+---
+name: resampling-strategies
+description: Resampling strategies in tidymodels, including validation splits, cross-validation, bootstrap, nested resampling, and grouped data.
+---
+
 # Resampling Strategies
 
 ## Overview

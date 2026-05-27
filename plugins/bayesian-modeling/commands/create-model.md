@@ -20,7 +20,7 @@ Ask the user to specify:
 
 2. **Target Language**:
    - Stan with cmdstanr (DEFAULT for R - recommended)
-   - PyMC 5 with ArviZ (DEFAULT for Python)
+   - PyMC with ArviZ (DEFAULT for Python)
    - JAGS with R2jags
    - WinBUGS with R2WinBUGS (Windows only)
 
