@@ -256,6 +256,15 @@ Use weighted logrank for non-proportional hazards.
 
 ---
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add agents, commands, or
+skills. Run `python3 scripts/validate-marketplace.py` before opening a PR — the
+same validator runs in CI to guarantee `.claude-plugin/marketplace.json` stays
+in sync with the filesystem.
+
+Release notes live in [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
 MIT License -- see [LICENSE](LICENSE) for details.

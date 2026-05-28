@@ -17,10 +17,10 @@ A unified [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) pl
 
 | Plugin | Focus | Agents | Commands | Skills |
 |:-------|:------|:------:|:--------:|:------:|
-| **bayesian-modeling** | Bayesian inference (Stan, PyMC, JAGS) | 6 | 3 | 9 |
-| **itc-modeling** | Indirect treatment comparisons | 7 | 2 | 6 |
-| **r-tidy-modeling** | Tidy R workflows & biostatistics | 10 | 7 | 23 |
-| **clinical-trial-simulation** | Clinical trial simulation | 7 | 5 | 7 |
+| [**bayesian-modeling**](./bayesian-modeling) | Bayesian inference (Stan, PyMC, JAGS) | 6 | 3 | 9 |
+| [**itc-modeling**](./itc-modeling) | Indirect treatment comparisons | 7 | 2 | 6 |
+| [**r-tidy-modeling**](./r-tidy-modeling) | Tidy R workflows & biostatistics | 10 | 7 | 23 |
+| [**clinical-trial-simulation**](./clinical-trial-simulation) | Clinical trial simulation | 7 | 5 | 7 |
 | **Total** | | **30** | **17** | **45** |
 
 ---

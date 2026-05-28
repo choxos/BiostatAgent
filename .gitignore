@@ -1,1 +1,35 @@
+# OS
 .DS_Store
+Thumbs.db
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+*.Rproj
+*.rds
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+*.egg-info/
+.ipynb_checkpoints/
+
+# Stan / cmdstan build artifacts
+*.stan.exe
+*.stan.o
+*.stan.hpp
+
+# Jekyll / GitHub Pages local builds
+docs/_site/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+docs/Gemfile.lock
+
+# Node / tooling
+node_modules/
